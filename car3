@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tesla Model 3 (2019)</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="proba.css">
+</head>
+<body>
+	<header>
+		<h1>Tesla Model 3 (2019)</h1>
+		<nav>
+			<ul>
+				<li><a href="#overview">Общ преглед</a></li>
+				<li><a href="#specs">Спецификации</a></li>
+				<li><a href="#gallery">Галерия</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section id="overview">
+			<h2>Общ преглед</h2>
+			<p>Автомобилът е директен внос от Швейцария. Капацитетът на батерията е замерван преди месец и е 93%.</p>
+		</section>
+
+		<section id="specs">
+			<h2>Спецификации</h2>
+			<ul>
+				<li>Година на производство: 2019 г.<li>
+                <li>Модел: Model 3 <li>
+                <li>Тип двигател: електрически<li>
+                <li>Обем на двигателя: 2 двигателя<li>
+                <li>Мощност: 258 к.с.<li>
+                <li>Въртящ момент: 527 Нм<li>
+                <li>Разход на енергия: 17.4 kWh/100 km<li>
+                <li>Зарядна мощност: 11 kW AC / 250 kW DC<li>
+                <li>Брой врати: 4<li>
+			    <li>Брой места: 5<li>
+                <li> Пробег: 500 км (WLTP)<li>
+                <li> Цена: 56 000 лв<li>
+			</ul>
+		</section>
+
+		<section id="gallery">
+			<h2>Галерия</h2>
+			<img src="tesla1.jpg" alt="Tesla Model 3 image 1">
+			<img src="tesla2.jpg" alt="Tesla Model 3 image 2">
+			<img src="tesla3.jpg" alt="Tesla Model 3 image 3">
+			<img src="tesla4.jpg" alt="Tesla Model 3 image 4">
+		</section>
+<section id="comments">
+	<h2>Коментари</h2>
+	<form id="comment-form">
+		<label for="comment">Коментар:</label>
+		<textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+		<br>
+		<label for="name">Име:</label>
+		<input type="text" id="name" name="name" required>
+		<button type="submit">Добави коментар</button>
+	</form>
+	<div id="comment-list"></div>
+</section>
+
+<script>
+	document.getElementById("comment-form").addEventListener("submit", function(event) {
+		event.preventDefault();
+		var comment = document.getElementById("comment").value;
+		var name = document.getElementById("name").value;
+		var timestamp = new Date().toLocaleString();
+		var commentList = document.getElementById("comment-list");
+		var newComment = document.createElement("div");
+		newComment.innerHTML = "<p><strong>" + name + "</strong> - " + timestamp + "</p><p>" + comment + "</p>";
+		commentList.insertBefore(newComment, commentList.firstChild);
+		document.getElementById("comment").value = "";
+		document.getElementById("name").value = "";
+	});
+</script>
+<section id="favorites">
+  <h2>Любими автомобили</h2>
+  <form id="favorites-form">
+   <label for="favorites-name">Име:</label>
+    <input type="text" id="favorites-name" name="favorites-name" required>
+    <button type="submit">Добави в любими автомобили</button>
+  </form>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("favorites-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var name = document.getElementById("favorites-name").value.trim();
+      var message = name + ", добавихте този автомобил в любими!";
+      document.getElementById("modal-message").textContent = message;
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("favorites-name").value = "";
+    });
+
+    document.getElementsByClassName("close")[0].addEventListener("click", function() {
+      document.getElementById("modal").style.display = "none";
+    });
+  </script>
+</section>
+	
+</main>
+
+	<footer>
+		<p>Copyright © 
+		<script>
+			document.write(new Date().getFullYear());
+		</script> 
+		- Bri4ka Auto Shop</p>
+	</footer>
+</body>
+</html>
