@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Bri4ka - магазин за коли</title>
+	<link rel="stylesheet" type="text/css" href="nov.css">
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="D:\ИБТ-КУРСОВА\BRI4KA.jpg" alt="Bri4ka">
+		</div>
+		<nav>
+			<ul class="car-list">
+				<li>
+					<h2>BMW 335</h2>
+					<p>Колата е 2007 година, бензин (306 к.с.), ръчни скорости.</p>
+					<a href="car1.html"><img src="bmw1.jpg" alt="Още информация за автомобила"></a>
+					<p class="price">Цена: 15 000 лв.</p>
+				</li>
+				<li>
+					<h2>Ауди А3 2.0</h2>
+					<p>Колата е 2005 година, дизел (140 к.с.), ръчни скорости.</p>
+					<a href="car2.html"><img src="audi1.jpg" alt="Още информация за автомобила"></a>
+					<p class="price">Цена: 8 500 лв.</p>
+				</li>
+				<li>
+					<h2>Tesla Model 3</h2>
+					<p>Колата е 2019 година, 258 к.с., много запазена батерия.</p>
+					<a href="car3.html"><img src="tesla1.jpg" alt="Още информация за автомобила"></a>
+					<p class="price">Цена: 56 000 лв.</p>
+				</li>
+				<li>
+					<h2>Mercedes EQS</h2>
+					<p>Колата е 2021 година, 516 к.с., много запазена батерия.</p>
+					<a href="car4.html"><img src="eqs1.jpg" alt="Още информация за автомобила"></a>
+					<p class="price">Цена: 190 000 лв.</p>
+				</li>
+				<li>
+					<h2>Porsche 911 GT</h2>
+					<p>Колата е 2016 година, 500 к.с., автоматични скорости.</p>
+					<a href="car5.html"><img src="porsche1.jpg" alt="Още информация за автомобила"></a>
+					<p class="price">Цена: 318 000 лв.</p>
+				</li>
+			</ul>
+		</nav>
+	</header>
+	<section id="app-download">
+		<div class="container">
+			<h2>Можете да изтеглите нашето приложение на вашето устройство:</h2>			
+			<div class="app-download">
+				<a href="https://play.google.com/store/games" target="_blank">
+					<img src="google.jpg" alt="Download from Google Play">
+				</a>
+				<a href="https://www.apple.com/app-store/" target="_blank">
+					<img src="appstore.png" alt="Download from App Store">
+				</a>
+			</div>
+		</div>
+	</section>
+	<section id="call-to-action">
+		<div class="container">
+			<h2>Искате да закупите автомобил?</h2>
+			<p>Свържете се с нас за повече информация.</p>
+			<a href="#" class="btn">+359 98 123 4790</a>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<p>&copy; 2023 Bri4ka. Всички права запазени.</p>
+		</div>
+	</footer>
+</body>
+</html>
+
+
