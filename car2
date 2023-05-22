@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audi A3 2.0tdi (2005)</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="proba.css">
+</head>
+<body>
+	<header>
+		<h1>Audi A3 2.0tdi (2005)</h1>
+		<nav>
+			<ul>
+				<li><a href="#overview">Общ преглед</a></li>
+				<li><a href="#specs">Спецификации</a></li>
+				<li><a href="#gallery">Галерия</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section id="overview">
+			<h2>Общ преглед</h2>
+			<p>Колата е обслужвана винаги на време, Всички екстри за модела, давам я с нови зимни гуми на един сезон и 18-ки джанти.
+			Всичко платено до октомври месец.</p>
+		</section>
+
+	<section id="specs">
+	<h2>Спецификации</h2>
+	<ul>
+		<li>Година на производство: 2005 г.</li>
+		<li>Модел: A3</li>
+		<li>Тип двигател: дизелов</li>
+		<li>Обем на двигателя: 2.0 л.</li>
+		<li>Мощност: 140 к.с.</li>
+		<li>Въртящ момент: 320 Нм</li>
+		<li>Скоростна кутия: ръчна</li>
+		<li>Брой врати: 4</li>
+		<li>Брой места: 5</li>
+		<li>Пробег: 180 000 км</li>
+		<li>Цена: 8 500 лв.</li>
+	</ul>
+     </section>
+
+
+		<section id="gallery">
+			<h2>Галерия</h2>
+			<img src="audi1.jpg" alt="Audi A3 image 1">
+			<img src="audi2.jpg" alt="Audi A3 image 2">
+			<img src="audi3.jpg" alt="Audi A3 image 3">
+			<img src="audi4.jpg" alt="Audi A3 image 4">
+		</section>
+	
+<section id="comments">
+	<h2>Коментари</h2>
+	<form id="comment-form">
+		<label for="comment">Коментар:</label>
+		<textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+		<br>
+		<label for="name">Име:</label>
+		<input type="text" id="name" name="name" required>
+		<button type="submit">Добави коментар</button>
+	</form>
+	<div id="comment-list"></div>
+</section>
+
+
+	<script>
+	document.getElementById("comment-form").addEventListener("submit", function(event) {
+		event.preventDefault();
+		var comment = document.getElementById("comment").value;
+		var name = document.getElementById("name").value;
+		var timestamp = new Date().toLocaleString();
+		var commentList = document.getElementById("comment-list");
+		var newComment = document.createElement("div");
+		newComment.innerHTML = "<p><strong>" + name + "</strong> - " + timestamp + "</p><p>" + comment + "</p>";
+		commentList.insertBefore(newComment, commentList.firstChild);
+		document.getElementById("comment").value = "";
+		document.getElementById("name").value = "";
+	});
+</script>
+
+<section id="favorites">
+  <h2>Любими автомобили</h2>
+  <form id="favorites-form">
+   <label for="favorites-name">Име:</label>
+    <input type="text" id="favorites-name" name="favorites-name" required>
+    <button type="submit">Добави в любими автомобили</button>
+  </form>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("favorites-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var name = document.getElementById("favorites-name").value.trim();
+      var message = name + ", добавихте този автомобил в любими!";
+      document.getElementById("modal-message").textContent = message;
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("favorites-name").value = "";
+    });
+
+    document.getElementsByClassName("close")[0].addEventListener("click", function() {
+      document.getElementById("modal").style.display = "none";
+    });
+  </script>
+</section>
+	
+</main>
+	<footer>
+		<p>Copyright © 
+		<script>
+			document.write(new Date().getFullYear());
+		</script> 
+		- Bri4ka Auto Shop</p>
+	</footer>
+</body>
+</html>
