@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMW 335 (2007)</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="proba.css">
+</head>
+<body>
+	<header>
+		<h1>BMW 335 (2007)</h1>
+		<nav>
+			<ul>
+				<li><a href="#overview">Общ преглед</a></li>
+				<li><a href="#specs">Спецификации</a></li>
+				<li><a href="#gallery">Галерия</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+	<section id="overview">
+		<h2>Общ преглед</h2>
+		<p>Колата е каран всеки ден, не са пестени средства по нея. Нов съединител на 15 000 километра, основен ремонт на двигателя преди 35 000 км.
+		Колата разполага с всички екстри за модела освен мултимедия.</p>
+	</section>
+
+	<section id="specs">
+		<h2>Спецификации</h2>
+		<ul>
+			<li>Година на производство: 2007 г.</li>
+            <li>Модел: 335</li>
+           <li> Тип двигател: бензинов</li>
+            <li>Обем на двигателя: 3.0 л.</li>
+            <li>Мощност: 306 к.с.</li>
+            <li>Въртящ момент: 400 Нм</li>
+            <li>Скоростна кутия: ръчна</li>
+          <li> Брой врати: 4</li>
+           <li> Брой места: 5</li>
+           <li> Пробег: 120 000 км</li>
+           <li> Цена: 15 000 лв.</li>
+		</ul>
+	</section>
+
+	<section id="gallery">
+		<h2>Галерия</h2>
+		<img src="bmw1.jpg" alt="BMW 335 image 1">
+		<img src="bmw4.jpg" alt="BMW 335 image 4">
+		<img src="bmw3.jpg" alt="BMW 335 image 3">
+	</section>
+	
+<section id="comments">
+	<h2>Коментари</h2>
+	<form id="comment-form">
+		<label for="comment">Коментар:</label>
+		<textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+		<br>
+		<label for="name">Име:</label>
+		<input type="text" id="name" name="name" required>
+		<button type="submit">Добави коментар</button>
+	</form>
+	<div id="comment-list"></div>
+</section>
+
+<script>
+	document.getElementById("comment-form").addEventListener("submit", function(event) {
+		event.preventDefault();
+		var comment = document.getElementById("comment").value;
+		var name = document.getElementById("name").value;
+		var timestamp = new Date().toLocaleString();
+		var commentList = document.getElementById("comment-list");
+		var newComment = document.createElement("div");
+		newComment.innerHTML = "<p><strong>" + name + "</strong> - " + timestamp + "</p><p>" + comment + "</p>";
+		commentList.insertBefore(newComment, commentList.firstChild);
+		document.getElementById("comment").value = "";
+		document.getElementById("name").value = "";
+	});
+</script>
+
+
+<section id="favorites">
+  <h2>Любими автомобили</h2>
+  <form id="favorites-form">
+   <label for="favorites-name">Име:</label>
+    <input type="text" id="favorites-name" name="favorites-name" required>
+    <button type="submit">Добави в любими автомобили</button>
+  </form>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("favorites-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var name = document.getElementById("favorites-name").value.trim();
+      var message = name + ", добавихте този автомобил в любими!";
+      document.getElementById("modal-message").textContent = message;
+      document.getElementById("modal").style.display = "block";
+      document.getElementById("favorites-name").value = "";
+    });
+
+    document.getElementsByClassName("close")[0].addEventListener("click", function() {
+      document.getElementById("modal").style.display = "none";
+    });
+  </script>
+</section>
+
+</main>
+
+<footer>
+	<p>
+		&copy; <script>document.write(new Date().getFullYear())</script> - Bri4ka Auto Shop
+	</p>
+</footer>
+</body>
+</html>
